@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 const NavItem = props =>{
     const pageURI = window.location.pathname + window.location.search
@@ -14,7 +14,7 @@ const NavItem = props =>{
     );
 }
 
-class NavDropdown extends React.Component{
+class NavDropdown extends Component{
     constructor(props){
         super(props)
         this.state = {
@@ -45,7 +45,7 @@ class NavDropdown extends React.Component{
     }
 }
 
-class Navigation extends React.Component{
+class Navigation extends Component{
     render(){
         return(
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -59,17 +59,6 @@ class Navigation extends React.Component{
                         <NavItem path="/" name="Home"/>
                         <NavItem path="/page2" name="Page 2"/>
                         <NavItem path="/page3" name="Disabled" disabled="true"/>
-                        {/* <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a className="dropdown-item" href="/">Action</a>
-                                <a className="dropdown-item" href="/">Another action</a>
-                                <div className="dropdown-divider"></div>
-                                <a className="dropdown-item" href="/">Something else here</a>
-                            </div>
-                        </li> */}
                         <NavDropdown name="Dropdown">
                             <a className="dropdown-item" href="/">Action</a>
                             <a className="dropdown-item" href="/">Another action</a>
@@ -79,7 +68,7 @@ class Navigation extends React.Component{
                     </ul>
                     <form className="form-inline my-2 my-lg-0">
                         <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-                            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </div>
             </nav>
