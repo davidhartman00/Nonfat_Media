@@ -28,7 +28,6 @@ class NavDropdown extends React.Component{
                     <a className="dropdown-item" href="/">Something else here</a>
                 </div>
             </li>
-
         )
     }
 }
