@@ -21,11 +21,20 @@ class NavDropdown extends React.Component{
             isToggledOn : false
         }
     }
+    
+    showDropdown(e){
+        e.preventDefault()
+        this.setState(prevState => ({
+          isToggledOn : !prevState.isToggledOn  
+        }))
+    }
+
     render(){
-        const classDropdownMenu = 'dropdown-menu' + (this.state.isToggledOn ? "show" : "")
+        const classDropdownMenu = 'dropdown-menu' + (this.state.isToggledOn ? " show" : "")
         return(
             <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                onClick={e=>{this.showDropdown(e)}}>
                     {this.props.name}
                 </a>
                 <div className={classDropdownMenu} aria-labelledby="navbarDropdown">
