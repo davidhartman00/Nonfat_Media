@@ -17,9 +17,7 @@ const NavItem = props =>{
 class NavDropdown extends Component{
     constructor(props){
         super(props)
-        this.state = {
-            isToggledOn : false
-        }
+        this.state = {isToggledOn : false}
     }
     
     showDropdown(e){
@@ -46,15 +44,26 @@ class NavDropdown extends Component{
 }
 
 class Navigation extends Component{
+    constructor(props){
+        super(props)
+        this.state = {showNavMobile : false}
+    }
+    openHamburger(e){
+        e.preventDefault()
+        this.setState(prevState => ({
+            showNavMobile: !prevState.showNavMobile
+        })) 
+    }
     render(){
+        const classNavButtons = "collapse navbar-collapse" + (this.state.showNavMobile ? " show": "") 
         return(
             <nav className="navbar navbar-expand-lg navbar-light bg-light nfm-navbar">
                 <a className="navbar-brand nfm-brand" href="/">Nonfat Media</a>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button onClick={e => {this.openHamburger(e)}} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <div className={classNavButtons} id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
                         <NavItem path="/" name="Home"/>
                         <NavItem path="/page2" name="Page 2"/>
