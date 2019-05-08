@@ -31,3 +31,38 @@
     transform: rotate(360deg);
   }
 } */
+
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Roboto:400,700');
+
+*{
+  font-family: 'Lato', sans-serif;
+  color: #3f4023;
+}
+
+.bg-light.nfm-navbar{
+  background-color: rgb(116,182,6) !important;
+  font-weight: 700;
+}
+
+.navbar-brand.nfm-brand{
+  font-size: 1.5em;
+}
+
+nav.bg-light.nfm-navbar  a,
+nav.bg-light.nfm-navbar  a.nav-link{
+  color: #3f4023;
+}
+
+.nfm-header{
+  text-align: center;
+  padding: 10px 0;
+}
+
+.breakdown-list{
+  background-color: rgb(224, 224, 221);
+  padding: 15px 0;
+}
+
+.breakdown-item{
+  padding-bottom: 15px;
+}
