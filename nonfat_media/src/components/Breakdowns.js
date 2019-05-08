@@ -8,7 +8,7 @@ class Breakdowns extends Component{
         var month = months[a.getMonth()];
         var date = a.getDate();
         var hour = a.getHours();
-        var min = a.getMinutes();
+        var min = a.getMinutes().toString().length == 1 ? '0' + a.getMinutes() : a.getMinutes() ;
         var time = month + ' ' + date + ' '  + year + ' ' + hour + ':' + min  ;
     return time;
     }
